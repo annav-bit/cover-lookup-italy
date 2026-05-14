@@ -3,7 +3,7 @@
 <title>Cover Lookup · Spotify Italy</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#121212;color:#fff;min-height:100vh;padding:32px 20px}.wrap{max-width:860px;margin:0 auto}.top{display:flex;align-items:center;gap:14px;margin-bottom:28px}.logo{width:44px;height:44px;background:#1DB954;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px}.sub{font-size:13px;color:#b3b3b3;margin-top:3px}.search-row{display:flex;gap:10px;margin-bottom:16px}input{flex:1;background:#282828;border:2px solid #444;border-radius:10px;padding:14px 18px;color:#fff;font-size:16px;outline:none;transition:border-color .2s}input:focus{border-color:#1DB954}input::placeholder{color:#777}button{background:#1DB954;border:none;border-radius:10px;padding:0 24px;color:#000;font-size:15px;font-weight:700;cursor:pointer}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}.chip{background:#282828;border:1.5px solid #444;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer;color:#b3b3b3}.chip.on{color:#000}.count{font-size:13px;color:#b3b3b3;margin-bottom:10px;min-height:18px}.card{background:#1e1e1e;border:1px solid #333;border-radius:12px;overflow:hidden}table{width:100%;border-collapse:collapse}thead tr{background:#282828}th{padding:11px 18px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#777}td{padding:11px 18px;font-size:14px;border-top:1px solid #2a2a2a;vertical-align:middle}tr:hover td{background:rgba(255,255,255,.03)}.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;color:#fff;margin:2px}.muted{color:#666;font-size:12px}.empty{text-align:center;padding:60px 20px;color:#555}.tag-multi{font-size:11px;color:#1DB954;margin-left:6px;font-weight:600}</style>
 </head><body><div class="wrap">
-<div class="top"><div class="logo">🎵</div><div><h1 style="font-size:20px;font-weight:700">Cover Lookup</h1><div class="sub">Spotify Italy Editorial · 298 artisti</div></div></div>
+<div class="top"><div class="logo">🎵</div><div><h1 style="font-size:20px;font-weight:700">Cover Lookup</h1><div class="sub">Spotify Italy Editorial · 308 artisti</div></div></div>
 <div class="search-row"><input id="q" type="text" placeholder="Cerca artista…" autocomplete="off"><button onclick="go()">Cerca</button></div>
 <div class="chips" id="chips">
     <div class="chip on" id="chip-all" onclick="setLabel('')">Tutti</div>
@@ -29,12 +29,14 @@
 const LC = {"ADA": "#e91e63", "ALTAFONTE": "#9c27b0", "ARTIST FIRST": "#3f51b5", "BELIEVE": "#2196f3", "BMG": "#00bcd4", "CAROSELLO": "#009688", "FUGA": "#4caf50", "IDOL": "#8bc34a", "INGROOVES": "#cddc39", "SONY": "#e53935", "SUGAR": "#ff9800", "THE ORCHARD": "#795548", "UMG": "#1db954", "WARNER": "#607d8b"};
 const DB = [
   {"a": "18kLatrelle", "l": "SONY", "al": "SONY", "s": "cover 08.04"},
+  {"a": "18kVisinoBiancoUNK", "l": "UMG", "al": "UMG", "s": "cover 15.05.26"},
   {"a": "22simba", "l": "UMG", "al": "UMG", "s": "cover1agosto"},
   {"a": "22simbaMarracash", "l": "UMG", "al": "UMG", "s": "171025 cover"},
   {"a": "22simbaRkomi", "l": "UMG", "al": "UMG", "s": "cover231"},
   {"a": "22simbaSilentBob", "l": "UMG", "al": "UMG", "s": "cover 29:08"},
   {"a": "2Rari", "l": "UMG", "al": "UMG", "s": "cover 29:08"},
   {"a": "333mob", "l": "WARNER", "al": "WARNER", "s": "0407 cover"},
+  {"a": "@gabriele", "l": "ADA", "al": "ADA", "s": "cover 15.05.26"},
   {"a": "AchilleLauro", "l": "WARNER", "al": "WARNER", "s": "120925 cover"},
   {"a": "Ahadadream", "l": "DA_SMISTARE", "al": "DA_SMISTARE", "s": "cover 08.04"},
   {"a": "Aira", "l": "WARNER", "al": "WARNER", "s": "cover 20.03"},
@@ -79,6 +81,7 @@ const DB = [
   {"a": "CarlBrave", "l": "WARNER", "al": "WARNER", "s": "241025_cover"},
   {"a": "CarolinaBubbico", "l": "THE ORCHARD", "al": "THE ORCHARD", "s": "cover 06.03"},
   {"a": "Casadilego", "l": "ADA", "al": "ADA", "s": "cover91"},
+  {"a": "CateLumina", "l": "ADA", "al": "ADA", "s": "cover 15.05.26"},
   {"a": "ceneri", "l": "UMG", "al": "UMG", "s": "0407 cover"},
   {"a": "centomilacarie", "l": "UMG", "al": "UMG", "s": "120925 cover"},
   {"a": "CesareCremonini", "l": "UMG", "al": "UMG", "s": "cover91"},
@@ -90,6 +93,7 @@ const DB = [
   {"a": "CharlotteDeWitte", "l": "THE ORCHARD", "al": "THE ORCHARD", "s": "cover 17.04"},
   {"a": "chiello", "l": "UMG", "al": "UMG", "s": "27.02 cover"},
   {"a": "CLARA", "l": "WARNER", "al": "WARNER", "s": "cover 08.04"},
+  {"a": "Coez", "l": "WARNER", "al": "WARNER", "s": "cover 15.05.26"},
   {"a": "CoezJuli", "l": "SONY", "al": "SONY", "s": "cover 20.03"},
   {"a": "Cosmo", "l": "SONY", "al": "SONY", "s": "cover 17.04"},
   {"a": "DamianoDavid", "l": "SONY", "al": "SONY", "s": "120925 cover"},
@@ -97,6 +101,7 @@ const DB = [
   {"a": "dedde", "l": "WARNER", "al": "WARNER", "s": "cover132"},
   {"a": "DelicatoniCocaPuma", "l": "THE ORCHARD", "al": "THE ORCHARD", "s": "cover 29:08"},
   {"a": "Dimartino", "l": "SONY", "al": "SONY", "s": "cover 20.03"},
+  {"a": "DissGacha", "l": "SONY", "al": "SONY", "s": "cover 15.05.26"},
   {"a": "Ditonellapiaga", "l": "BMG", "al": "BMG", "s": "cover 08.04"},
   {"a": "Djo", "l": "THE ORCHARD", "al": "THE ORCHARD", "s": "121225_cover"},
   {"a": "EddieBrock", "l": "WARNER", "al": "ADA, WARNER", "s": "281125_cover"},
@@ -105,6 +110,7 @@ const DB = [
   {"a": "EleA", "l": "UMG", "al": "UMG", "s": "10.10.25 cover"},
   {"a": "EleAColapesce", "l": "UMG", "al": "UMG", "s": "COVER 18.07"},
   {"a": "ElephantBrain", "l": "UMG", "al": "UMG", "s": "10.10.25 cover"},
+  {"a": "Elisa", "l": "UMG", "al": "UMG", "s": "cover 15.05.26"},
   {"a": "ElodieSferaEbbasta", "l": "UMG", "al": "UMG", "s": "0407 cover"},
   {"a": "EmiliKasa", "l": "WARNER", "al": "ADA, WARNER", "s": "121225_cover"},
   {"a": "Emma", "l": "UMG", "al": "UMG", "s": "121225_cover"},
@@ -141,11 +147,13 @@ const DB = [
   {"a": "Glocky", "l": "BELIEVE", "al": "BELIEVE", "s": "cover 01.05.26"},
   {"a": "GMineiro", "l": "DA_SMISTARE, WARNER", "al": "DA_SMISTARE, WARNER", "s": "cover 01.05.26"},
   {"a": "GordoReinerZonneveldt", "l": "WARNER", "al": "WARNER", "s": "27.02 cover"},
+  {"a": "GracieAbrams", "l": "UMG", "al": "UMG", "s": "cover 15.05.26"},
   {"a": "Guè", "l": "UMG", "al": "UMG", "s": "cover231"},
   {"a": "HarryStyles", "l": "SONY", "al": "SONY", "s": "cover 06.03"},
   {"a": "HÅN", "l": "THE ORCHARD", "al": "THE ORCHARD", "s": "cover269"},
   {"a": "HolyFrancisco", "l": "UMG", "al": "UMG", "s": "171025 cover"},
   {"a": "HUGEL", "l": "UMG", "al": "UMG", "s": "cover 03.04"},
+  {"a": "iako", "l": "UMG", "al": "UMG", "s": "cover 15.05.26"},
   {"a": "IlMagoDelGelato", "l": "SONY", "al": "SONY", "s": "COVER 18.07"},
   {"a": "ImEnvy", "l": "WARNER", "al": "WARNER", "s": "cover1agosto"},
   {"a": "INVERNO", "l": "BELIEVE", "al": "BELIEVE", "s": "cover132"},
@@ -210,6 +218,7 @@ const DB = [
   {"a": "MissMonique", "l": "THE ORCHARD", "al": "THE ORCHARD", "s": "141125cover"},
   {"a": "Moder", "l": "BELIEVE", "al": "BELIEVE", "s": "241025_cover"},
   {"a": "Morad", "l": "THE ORCHARD", "al": "THE ORCHARD", "s": "120925 cover"},
+  {"a": "MVKilla", "l": "WARNER", "al": "WARNER", "s": "cover 15.05.26"},
   {"a": "Myricae", "l": "ARTIST FIRST", "al": "ARTIST FIRST", "s": "cover2006"},
   {"a": "Nabi", "l": "WARNER", "al": "WARNER", "s": "cover 06.03"},
   {"a": "najma", "l": "ARTIST FIRST", "al": "ARTIST FIRST", "s": "cover24.04"},
@@ -238,6 +247,7 @@ const DB = [
   {"a": "Paky", "l": "WARNER", "al": "WARNER", "s": "121225_cover"},
   {"a": "PapaVNightSkinnyKidYugi", "l": "SONY", "al": "SONY", "s": "141125cover"},
   {"a": "PeterNapoLILCREnnyP", "l": "UMG", "al": "UMG", "s": "cover2006"},
+  {"a": "PinguiniTatticiNucleari", "l": "SONY", "al": "SONY", "s": "cover 15.05.26"},
   {"a": "PinkPantheressZaraLarsson", "l": "WARNER", "al": "WARNER", "s": "cover 20.03"},
   {"a": "primastanzaadestra", "l": "UMG", "al": "SUGAR, UMG", "s": "10.10.25 cover"},
   {"a": "Primogenito", "l": "UMG", "al": "UMG", "s": "cover24.04"},
